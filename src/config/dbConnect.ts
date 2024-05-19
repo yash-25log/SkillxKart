@@ -1,13 +1,19 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
-
 const dbConnect = async () => {
   try {
-    await mongoose.connect("mongodb+srv://skillxkart:skillxkart1234@cluster0.lzwqvrb.mongodb.net/", {
+    const mongoUri =process.env.MONGO_URI;
+    if (!mongoUri) {
+      throw new Error('MongoDB URI is undefined');
+    }
+
+    await mongoose.connect(mongoUri, {
       autoIndex: true,
     });
-   console.log("DB connected successfully!");
-  } catch (error: any) {
-    console.error(`${error.message}`);
+
+    console.log("DB connected successfully!");
+  } catch (error:Error | any) {
+    console.error(`Database connection error: ${error.message}`);
   }
 };
 
