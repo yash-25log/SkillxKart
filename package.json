@@ -13,6 +13,7 @@
   "author": "Yash",
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^2.2.0",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "crypto-js": "^4.2.0",
