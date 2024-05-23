@@ -9,9 +9,10 @@ const db = require("./config/dbConnect");
 const course = require("./Routes/courses.routes");
 const lesson = require("./Routes/lessons.routes");
 const content = require("./Routes/content.routes")
-//cotenv config
+
+//dotenv config
 dotenv.config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8001;
 
 //Database Connections
 db();
